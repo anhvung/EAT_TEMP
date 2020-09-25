@@ -3,7 +3,7 @@ var myvar = '<section id="wrapper">'+
 '						'+
 ''+
 '						<!-- Content -->'+
-'							<div class="wrapper">'+
+'							<div class="wrapper" style="margin-bottom: 0em !important" >'+
 '								<div class="inner">'+
 ''+
 '									'+
