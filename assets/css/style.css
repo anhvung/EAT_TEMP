@@ -50,21 +50,21 @@ body {
 }
 .player input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none !important;
-  background: #b50000;
+  background: #5100ff;
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  box-shadow: -100vw 0 0 100vw #4d4ddb;
+  box-shadow: -100vw 0 0 100vw #6970d1;
 }
 .player input[type="range"]::-moz-range-thumb {
-  background: #b50000;
+  background: #5100ff;
   height: 8px;
   width: 8px;
   border-radius: 100%;
 }
 .player input[type="range"]::-ms-thumb {
   -webkit-appearance: none !important;
-  background: #b50000;
+  background: #5100ff;
   height: 8px;
   width: 8px;
   border-radius: 100%;
@@ -116,7 +116,7 @@ body {
   cursor: pointer;
 }
 .player .btn-box i.active {
-  color: #b50000;
+  color: #5100ff;
 }
 .player .volume-box {
   display: none;

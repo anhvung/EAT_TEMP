@@ -4242,7 +4242,24 @@ iframe{
 	display:block;
 
 }
-.artiste{
-	margin: 0 0 !important;
+
+
+
+.profilepic  {
+	border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-20px, 50px);
+
+}
+@media screen and (max-width: 736px) {
+
+		.profilepic  {
+	border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  transform: translate(-20px, 30px);
+
 }
 
+	}
