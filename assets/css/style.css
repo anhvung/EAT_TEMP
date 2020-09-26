@@ -1,119 +1,213 @@
-.container2 {
-  width: 800px;
-  margin: 30px auto;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #2E3141;
+
+  position: relative;
+  font-family: "Roboto", sans-serif;
 }
 
-.mejs__container {
-  margin-top: 10px;
-}
-.mejs__controls {
-  display: block;
-}
-.mejs__controls, .mejs__container {
-  background: none !important;
-}
-.mejs__time {
-  color: #777 !important;
-  font-weight: normal;
+*::selection {
+  background-color: unset;
 }
 
-.podcast {
-  background: #f0f0f0 !important;
-  padding: 30px;
-  border-radius: 3px;
+.player {
+  position: relative;
+
+  width: 330px;
+  height: 530px;
+  border-radius: 15px;
+  background-color: #ede7ff;
+  box-shadow: 0 15px 20px 0 #7183c5;
+   zoom: 0.9;
+    -moz-transform: scale(0.9);
+
 }
-.podcast__episode_title {
-  font-size: 28px;
-  font-weight: bold;
-  line-height: 1.5;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  color: #333 !important;
-} 
-.podcast__title {
-  margin-top: 10px;
-  text-transform: uppercase;
-  font-size: 11px;
-  color: #555 !important;
+.player input[type="range"] {
+  -webkit-appearance: none !important;
+  margin: 0px;
+  padding: 0px;
+  background: #ffffff;
+  height: 5px;
+  width: 150px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
 }
-.podcast__title i {
-  font-style: normal;
-  font-weight: normal;
-  text-transform: capitalize;
-  margin-left: 10px;
+.player input[type="range"]::-ms-fill-lower {
+  background: #ffffff;
 }
-.podcast__meta {
-  background: #ddd !important;
-  margin: 40px -30px -30px -30px;
-  padding: 0 30px 30px 30px;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+.player input[type="range"]::-ms-fill-upper {
+  background: #ffffff;
 }
-.podcast__meta .artwork {
-  margin-right: 0;
-  -webkit-transform: translateY(-70px);
-          transform: translateY(-70px);
+.player input[type="range"]::-moz-range-track {
+  border: none;
+  background: #ffffff;
 }
-.podcast__meta .artwork > img {
-  border-radius: 3px;
+.player input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background: #b50000;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  box-shadow: -100vw 0 0 100vw #4d4ddb;
+}
+.player input[type="range"]::-moz-range-thumb {
+  background: #b50000;
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+}
+.player input[type="range"]::-ms-thumb {
+  -webkit-appearance: none !important;
+  background: #b50000;
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+}
+.player .cover {
   width: 150px;
   height: 150px;
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
-  margin-bottom: -80px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translateX(-50%);
+  box-shadow: 0 5px 20px 0 #d56c006d;
 }
-
-.mejs-prepended-buttons {
-  display: -webkit-box;
+.player .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.player .info {
+  position: absolute;
+  left: 50%;
+  top: 240px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.player .info .title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 2px;
+}
+.player .info .singer {
+  font-size: 12px;
+  color: #72646f;
+}
+.player .btn-box {
+  position: absolute;
+  top: 330px;
+  width: 100%;
   display: flex;
+  justify-content: center;
 }
-
-.mejs-appended-buttons {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-          justify-content: space-evenly;
+.player .btn-box i {
+  font-size: 24px;
+  color: #72646f;
+  margin: 0 30px;
+  cursor: pointer;
 }
-
-.mejs__play > button {
-  background: transparent url("images/mediaplayer-sprite-gray.svg") no-repeat;
+.player .btn-box i.active {
+  color: #b50000;
 }
-
-.mejs__pause > button {
-  background: transparent url("images/mediaplayer-sprite-gray.svg") no-repeat;
-  background-position: -20px 0;
+.player .volume-box {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 295px;
+  transform: translateX(-50%);
+  z-index: 1;
+  padding: 0 20px;
 }
-
-.mejs__mute > button {
-  background: transparent url("images/mediaplayer-sprite-gray.svg") no-repeat;
-  background-position: -60px 0;
+.player .volume-box .volume-down {
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #72646f;
 }
-
-.mejs__unmute > button {
-  background: transparent url("images/mediaplayer-sprite-gray.svg") no-repeat;
-  background-position: -40px 0;
+.player .volume-box .volume-up {
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #72646f;
 }
-
-.mejs-skip-back-button > button,
-.mejs__skip-back-button > button {
-  background: transparent url("images/skipback.svg");
+.player .volume-box .volume-up::selection {
+  background-color: unset;
 }
-
-.mejs-jump-forward-button > button, .mejs__jump-forward-button > button {
-  background: url("images/jumpforward.svg") no-repeat;
+.player .volume-box input[type="range"] {
+  height: 5px;
+  width: 150px;
+  margin: 0 0 15px 0;
 }
-
-.mejs__button > button {
-  color: #555 !important;
+.player .volume-box.active {
+  display: block;
 }
-
-.mejs__horizontal-volume-slider {
-  display: none !important;
+.player .music-box {
+  position: absolute;
+  left: 50%;
+  top: 385px;
+  transform: translateX(-50%);
 }
-.mejs__time-current{
-color : #555 !important;
+.player .music-box input[type="range"] {
+  height: 5px;
+  width: 230px;
+  margin: 0 0 10px 0;
+}
+.player .music-box input[type="range"]::-webkit-slider-thumb {
+  height: 5px;
+  width: 7px;
+}
+.player .music-box .current-time {
+  position: absolute;
+  left: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #72646f;
+}
+.player .music-box .duration {
+  position: absolute;
+  right: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #72646f;
+}
+.player .music-box .play,
+.player .music-box .pause {
+  position: absolute;
+  left: 50%;
+  top: 55px;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #ede7ff;;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.player .music-box .play i,
+.player .music-box .pause i {
+  font-size: 36px;
+  color: #72646f;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-48%, -50%);
+}
+.player .music-box .pause i {
+  font-size: 32px;
+  transform: translate(-50%, -50%);
 }

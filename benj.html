@@ -11,11 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="shortcut icon" href="images/carré.jpg"/>
-    <link rel="stylesheet" href="assets/css/normalize.css">
-<link rel='stylesheet' href='assets/css/mediaelementplayer.css'>
-<link rel='stylesheet' href='assets/css/speed.min.css'>
-<link rel='stylesheet' href='assets/css/skip-back.min.css'>
-<link rel='stylesheet' href='assets/css/jump-forward.min.css'><link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto&amp;display=swap'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+   
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   
@@ -67,30 +66,116 @@
 
                   <h3 class="major">Pistes</h3>
                   
-                 <div>
-                                  
-                               <iframe id="inlineFrameExample"
-    title="Inline Frame Example"
-    width="900"
-    height="350"
-    src="test1.html">
-</iframe>
- <iframe id="inlineFramzeExample"
-    title="Inline Frame Example"
-    width="900"
-    height="350"
-    src="test2.html">
-</iframe>
+                    <section class="PlayerFeatures">
+                        <article>
+                          <div class="player">
+                              <div class="cover">
+                                  <img src="https://hosseinghanbari.ir/other/music-player/autumn.jpg" alt="">
+                              </div>
+                              <div class="info">
+                                  <div class="title">Autumn</div>
+                                  <div class="singer">Instrumental Music</div>
+                              </div>
+                              <div class="volume-box">
+                                  <span class="volume-down"><i class="material-icons">remove</i></span>
+                                  <input type="range" class="volume-range" step="1" value="80" min="0" max="100"
+                                      oninput="vmusic.volume = this.value/100">
+                                  <span class="volume-up"><i class="material-icons">add</i></span>
+                              </div>
+                              <div class="btn-box">
+                                  <i class="material-icons repeat" >repeat</i>
+                                  <i class="material-icons favorite active" >favorite</i>
+                                  <i class="material-icons volume" >volume_up</i>
+                              </div>
+                              <div class="music-box">
+                                  <input type="range" step="1" class="seekbar" value="0" min="0" max="100" >
 
+                                  <audio class="music-element" preload="metadata">
+                                      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mp3">
+                                  </audio>
+                                  <span class="current-time">0:0</span><span class="duration">0:0</span>
+                                  <span class="play" >
+                                      <i class="material-icons">play_arrow</i>
+                                  </span>
+                              </div>
+                          
+                          </div>
+                        </article>
+                        <article>
+                            <div class="player">
+                              <div class="cover">
+                                  <img src="https://hosseinghanbari.ir/other/music-player/autumn.jpg" alt="">
+                              </div>
+                              <div class="info">
+                                  <div class="title">Autumn</div>
+                                  <div class="singer">Instrumental Music</div>
+                              </div>
+                              <div class="volume-box">
+                                  <span class="volume-down"><i class="material-icons">remove</i></span>
+                                  <input type="range" class="volume-range" step="1" value="80" min="0" max="100"
+                                      oninput="vmusic.volume = this.value/100">
+                                  <span class="volume-up"><i class="material-icons">add</i></span>
+                              </div>
+                              <div class="btn-box">
+                                  <i class="material-icons repeat" >repeat</i>
+                                  <i class="material-icons favorite active" >favorite</i>
+                                  <i class="material-icons volume" >volume_up</i>
+                              </div>
+                              <div class="music-box">
+                                  <input type="range" step="1" class="seekbar" value="0" min="0" max="100" >
 
-                    </div>
+                                  <audio class="music-element" preload="metadata">
+                                      <source src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3" type="audio/mp3">
+                                  </audio>
+                                  <span class="current-time">0:0</span><span class="duration">5:48</span>
+                                  <span class="play" >
+                                      <i class="material-icons">play_arrow</i>
+                                  </span>
+                              </div>
+                          
+                          </div>
+                        </article>
+                        <article>
+                              <div class="player">
+                              <div class="cover">
+                                  <img src="https://hosseinghanbari.ir/other/music-player/autumn.jpg" alt="">
+                              </div>
+                              <div class="info">
+                                  <div class="title">Autumn</div>
+                                  <div class="singer">Instrumental Music</div>
+                              </div>
+                              <div class="volume-box">
+                                  <span class="volume-down"><i class="material-icons">remove</i></span>
+                                  <input type="range" class="volume-range" step="1" value="80" min="0" max="100"
+                                      oninput="vmusic.volume = this.value/100">
+                                  <span class="volume-up"><i class="material-icons">add</i></span>
+                              </div>
+                              <div class="btn-box">
+                                  <i class="material-icons repeat" >repeat</i>
+                                  <i class="material-icons favorite active" >favorite</i>
+                                  <i class="material-icons volume" >volume_up</i>
+                              </div>
+                              <div class="music-box">
+                                  <input type="range" step="1" class="seekbar" value="0" min="0" max="100" >
+
+                                  <audio class="music-element" preload="metadata">
+                                      <source src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3" type="audio/mp3">
+                                  </audio>
+                                  <span class="current-time">0:0</span><span class="duration">0:0</span>
+                                  <span class="play" >
+                                      <i class="material-icons">play_arrow</i>
+                                  </span>
+                              </div>
+                          
+                          </div>
+                        </article>
+                      </section>
                 </div>
               </div>
 
           </section>
- 
-<script src="assets/js/artistes.js"></script>
 
+ <script src="assets/js/artistes.js"></script>
         <!-- Footer -->
           <section id="footer">
             <div class="inner">
@@ -123,10 +208,7 @@
       <script src="assets/js/breakpoints.min.js"></script>
       <script src="assets/js/util.js"></script>
       <script src="assets/js/main.js"></script>
-       <script src='assets/js/mediaelement-and-player.min.js'></script>
-<script src='assets/js/skip-back.min.js'></script>
-<script src='assets/js/jump-forward.min.js'></script>
-<script src='assets/js/changespeed.js'></script><script  src="assets/js/script.js"></script>
+    <script  src="assets/js/script.js"></script>
 
 
   </body>
