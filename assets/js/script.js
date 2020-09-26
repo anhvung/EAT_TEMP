@@ -93,13 +93,22 @@ for (const coucou of allPlayers) {
 
 			// like
 			var favIcon = coucou.querySelector(':scope .btn-box >.favorite')
+			favIcon.classList.toggle('active')
+			var liked = 0;
 			favIcon.onclick=function handleFavorite() {
 				favIcon.classList.toggle('active');
+				if(liked == 0){
+					liked = 1
+					alert("moi aussi je t'aime")
+				}else{
+					liked = 0
+				}
 			}
 
 
 			// repeat
 			var repIcon = coucou.querySelector(':scope .btn-box > .repeat')
+
 			repIcon.onclick=function handleRepeat() {
 				if (music.loop == true) {
 					music.loop = false

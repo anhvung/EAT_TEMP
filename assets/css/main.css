@@ -4249,7 +4249,7 @@ iframe{
 	border-radius: 50%;
   width: 120px;
   height: 120px;
-  transform: translate(-20px, 50px);
+  transform: translate(-30px, 50px);
 
 }
 @media screen and (max-width: 736px) {
@@ -4263,3 +4263,21 @@ iframe{
 }
 
 	}
+
+.breathing_title{
+
+	animation: 3s infinite alternate ease-out breathing-color--dark;
+}
+
+@keyframes breathing-color--dark {
+    from
+    {	
+
+    	border-radius: 30px;
+        background-color: #2B3343;
+    }
+    to
+    {	border-radius: 30px;
+        background-color: hsl(0, 0%, 30%);
+    }
+}
