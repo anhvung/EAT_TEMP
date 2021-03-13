@@ -1,10 +1,5 @@
 
-var array = [
-"musique/anh-vu/Premier Contact.opus",
-"musique/anh-vu/Forum _ Talent day - Scooby Radio.opus",
-"musique/anh-vu/Direction Comète - Scooby Radio.opus",
-"musique/anh-vu/Experiment.mp3"
-]
+var array = ["musique/evan rabenasolo/Hymne d'Alibabed.opus", 'musique/anh-vu/vulf.opus', 'musique/benj tissot/Bob Parker.opus', 'musique/44/La Baleine (prod. Rewayde) (mix. Anh-Vu).mp3', 'musique/estienne goigoux/Forum du sale.mp3', 'musique/mathieu_serandour/Présentation Snax.mp3', 'musique/quentin ravaux/Stockholm.ogg', 'musique/anh-vu/The beginning.mp3', 'musique/evan rabenasolo/Forum Organisé.mp3', 'musique/benj tissot/Ce genre de choses.opus', 'musique/benj tissot/Âge Bizarre.opus', 'musique/benj tissot/AliRapBed.opus', 'musique/anh-vu/Experiment.mp3', 'musique/44/5_2.mp3', 'musique/anh-vu/Premier Contact.opus', 'musique/anh-vu/Direction Comète - Scooby Radio.opus', 'musique/anh-vu/Forum _ Talent day - Scooby Radio.opus', 'musique/mathieu_serandour/Martin Révisions.mp3', 'musique/anh-vu/Lost Summer.opus', 'musique/pierre rakotondrafara/Le Sanglier.ogg', 'musique/pierre rakotondrafara/LoFi Land.opus', "musique/44/Hymne À L'amour.mp3"] ;
 array =shuffle(array);
 var radiobtn = document.getElementById('radiobtn');
 var audio = document.getElementById('radio_temporaire');

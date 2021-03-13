@@ -12,7 +12,16 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="shortcut icon" href="images/carré.jpg"/>
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-</head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1LQZM21DCC"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-1LQZM21DCC');
+	</script>
+	</head>
 <body class="is-preload">
 
 	<!-- Page Wrapper -->
@@ -40,21 +49,19 @@
 			</nav>
 
 			<!-- Wrapper -->
-			<section id="wrapper">
+			<section id="wrapper" >
 				<header>
-					<div class="inner">
-						<h2><img class="profilepic" src="images/eat radio carré.jpg" alt="">Radio temporaire </h2>
-						<p>En attendant le déploiement d'une vraie web radio... </p>
+					<div class="inner" >
+						<h2><img class="profilepic" src="images/eat radio carré.jpg" alt="">EAT Radio - Mix</h2>
+						<p>EAT Radio : La radio de Télécom. <br><br>Ajoutez vos musiques préférées au mix sur ce <a href="https://docs.google.com/spreadsheets/d/1L1yLiXuM-oaXvVmXXR-vuR00gfYeZK9wIy5qiw8rwmI/edit?usp=sharing">lien</a></p>
+						<div style="background-color: #e1d8e8; padding: 10px; border-radius: 20px">
+						<iframe src="https://radio.rezel.net/public/eat" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 500px; border: 0;"></iframe>
 
-						<p>
-
-						<a  id="radiobtn" class="button primary" tyle="padding :5px ! important" onclick="startRadio">Démarrer la radio</a>
-						</p>
-
-						<p id="title" style="text-align:center; padding :10px !important;">
-
-
-						</p>
+						
+					</div>
+					<div style ="margin : 20px">
+							<a href="https://radio.rezel.net/public/eat/playlist/pls" class="button primary" >Enregistrer la radio sur l'appareil</a>
+						</div>
 					</div>
 				</header>
 
@@ -62,21 +69,7 @@
 			</section>
 
 
-			<section id="wrapper2">
-				
-
-
-
-				<audio id="radio_temporaire" >
-  <source id="source" src="musique/anh-vu/Forum _ Talent day - Scooby Radio.opus" type="audio/ogg">
-Your browser does not support the audio element.
-</audio>
-				
-							
-						
-
-
-			</section>
+		
 
 
 
@@ -89,7 +82,7 @@ Your browser does not support the audio element.
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script src="assets/js/radiotemp.js"></script>
+		<script src="assets/js/radio.js"></script>
 
 	</body>
 	</html>

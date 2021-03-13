@@ -7,88 +7,88 @@ var vmusic = null
 
 
 for (const coucou of allPlayers) {
-	 (function(coucou){
-        var music = coucou.querySelector(':scope .music-box > .music-element')
-			const parentsource=coucou.querySelector(':scope .music-box > .music-element > source')
-			vmusic = music
-			
-			const source=parentsource.getAttribute("src");
-			music.load();
-			var playBtn = coucou.querySelector(':scope .music-box > .play')
-			
-			var seekbar = coucou.querySelector(':scope .music-box > .seekbar')
-			var currentTime = coucou.querySelector(':scope .music-box > .current-time')
-			var duration = coucou.querySelector(':scope .music-box> .duration')
-			
-			
-			
-			playBtn.onclick = function handlePlay() {
-				
-				if (music.paused) {
-					
-					music.play();
-					
-					vmusic = music
-					playBtn.className = 'pause'
-					playBtn.innerHTML = '<i class="material-icons">pause</i>'
-				} else {
-					music.pause();
-					playBtn.className = 'play'
-					playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'
-				}
-				music.addEventListener('ended', function () {
-					playBtn.className = 'play'
-					playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'
-					music.currentTime = 0
-					
-					music.pause();
-				});
-				
+	(function(coucou){
+		var music = coucou.querySelector(':scope .music-box > .music-element')
+		const parentsource=coucou.querySelector(':scope .music-box > .music-element > source')
+		vmusic = music
+
+		const source=parentsource.getAttribute("src");
+		music.load();
+		var playBtn = coucou.querySelector(':scope .music-box > .play')
+
+		var seekbar = coucou.querySelector(':scope .music-box > .seekbar')
+		var currentTime = coucou.querySelector(':scope .music-box > .current-time')
+		var duration = coucou.querySelector(':scope .music-box> .duration')
+
+
+
+		playBtn.onclick = function handlePlay() {
+
+			if (music.paused) {
+
+				music.play();
+
+				vmusic = music
+				playBtn.className = 'pause'
+				playBtn.innerHTML = '<i class="material-icons">pause</i>'
+			} else {
+				music.pause();
+				playBtn.className = 'play'
+				playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'
 			}
-			function handlePlay() {
-				if (music.paused) {
-					music.play();
-					vmusic = music
-					playBtn.className = 'pause'
-					playBtn.innerHTML = '<i class="material-icons">pause</i>'
-				} else {
-					music.pause();
-					playBtn.className = 'play'
-					playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'
-				}
-				music.addEventListener('ended', function () {
-					playBtn.className = 'play'
-					playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'
-					music.currentTime = 0
-					
-				});
+			music.addEventListener('ended', function () {
+				playBtn.className = 'play'
+				playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'
+				music.currentTime = 0
+
+				music.pause();
+			});
+
+		}
+		function handlePlay() {
+			if (music.paused) {
+				music.play();
+				vmusic = music
+				playBtn.className = 'pause'
+				playBtn.innerHTML = '<i class="material-icons">pause</i>'
+			} else {
+				music.pause();
+				playBtn.className = 'play'
+				playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'
 			}
-			
-			vmusic.onloadeddata = function () {
-				seekbar.max = music.duration
-				var ds = parseInt(music.duration % 60)
-				var dm = parseInt((music.duration / 60) % 60)
-				duration.innerHTML = dm + ':' + ds
-				
-			}
-			music.onloadeddata = function () {
-				seekbar.max = music.duration
-				var ds = parseInt(music.duration % 60)
-				var dm = parseInt((music.duration / 60) % 60)
-				duration.innerHTML = dm + ':' + ds
-				
-			}
-			music.ontimeupdate = function () { 
+			music.addEventListener('ended', function () {
+				playBtn.className = 'play'
+				playBtn.innerHTML = '<i class="material-icons">play_arrow</i>'
+				music.currentTime = 0
+
+			});
+		}
+
+		vmusic.onloadeddata = function () {
+			seekbar.max = music.duration
+			var ds = "0"+parseInt(music.duration % 60)
+			var dm =  parseInt((music.duration / 60) % 60)
+			duration.innerHTML = dm + ':' + ds.slice(-2);
+
+		}
+		music.onloadeddata = function () {
+			seekbar.max = music.duration
+			var ds = "0"+ parseInt(music.duration % 60)
+			var dm = parseInt((music.duration / 60) % 60)
+			duration.innerHTML = dm + ':' + ds.slice(-2);
+
+		}
+		music.ontimeupdate = function () { 
 			seekbar.value = music.currentTime
 			
 			
-			}
-			seekbar.oninput =handleSeekBar = function () { music.currentTime = seekbar.value }
-			music.addEventListener('timeupdate', function () {
-				var cs = parseInt(music.currentTime % 60)
-				var cm = parseInt((music.currentTime / 60) % 60)
-				currentTime.innerHTML = cm + ':' + cs
-			}, false)
+		}
+		seekbar.oninput =handleSeekBar = function () { music.currentTime = seekbar.value }
+		music.addEventListener('timeupdate', function () {
+			var cs = "0"+parseInt(music.currentTime % 60)
+			var cm =  parseInt((music.currentTime / 60) % 60)
+			currentTime.innerHTML = cm + ':' +  cs.slice(-2);
+		}, false)
 
 
 			// like
@@ -167,7 +167,51 @@ for (const coucou of allPlayers) {
 				volumeRange.value = Number(volumeRange.value) + 20
 				music.volume = volumeRange.value / 100
 			}
-    })(coucou);
-			
+
+
+
+
+			var imagepop =  coucou.querySelector(':scope .cover > .img_cover')
+				var textvisible=0
+				var pop = coucou.querySelector(':scope .popup ')
+				imagepop.onclick = function myFunction() {
+
+
+					if(textvisible==0){
+						textvisible=1
+						pop.classList.remove("hide");
+						pop.classList.add("show");
+					}
+					else{
+						textvisible=0
+						pop.classList.remove("show");
+						pop.classList.add("hide");
+					}
+				}
+
+				pop.onclick = function myFunction() {
+
+
+					if(textvisible==1){
+						textvisible=0
+						pop.classList.remove("show");
+						pop.classList.add("hide");
+					}
+
+				}
+
+
+
+
+
+
+		})(coucou);
+
 	}
+
+
+
+
+	
+
 

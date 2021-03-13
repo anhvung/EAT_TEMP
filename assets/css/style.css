@@ -207,7 +207,67 @@ body {
   top: 50%;
   transform: translate(-48%, -50%);
 }
-.player .music-box .pause i {
-  font-size: 32px;
-  transform: translate(-50%, -50%);
+
+
+/* The actual popup */
+.popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding-left: 10px ;
+  padding-right: 6px ;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
 }
+
+/* Popup arrow */
+ .popup {
+  background-color: rgba(0, 0, 0, .70);
+  border-radius: 15px;
+  position:relative;
+  z-index: 1000;
+  padding : 7px;
+  width: 330px;
+  height: 530px;
+   display: table-cell;
+    vertical-align: middle 
+
+
+}
+.popup p{
+
+
+font-size: 17px;
+font-weight: bold;
+}
+
+/* Toggle this class - hide and show the popup */
+.show {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s linear;
+}
+
+.hide {
+
+ visibility: hidden;
+  opacity: 0;
+transition: visibility 0s 0.3s, opacity 0.3s linear;
+
+}
+
+.img_cover {
+  transition: transform .2s;
+}
+.img_cover:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+
